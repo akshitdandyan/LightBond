@@ -11,7 +11,7 @@ export function connectSocket() {
             window.location.href = "/";
         }
 
-        const socket = io("ws://localhost:5001", {
+        const socket = io(import.meta.env.VITE_API_URL, {
             auth: {
                 id,
             },

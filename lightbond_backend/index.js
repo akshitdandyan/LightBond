@@ -1,6 +1,8 @@
 import express from "express";
 import apiRouter from "./routes";
-import io from "./socket";
+import { createServer } from "http";
+import { Server } from "socket.io";
+import { setupSocketIo } from "./socket";
 // import { addNewUser, clearRedis, getAllUsers } from "./config/redis";
 
 const app = express();
@@ -19,7 +21,11 @@ app.use((req, res, next) => {
 
 app.use("/api", apiRouter);
 
-app.listen(5000, () => {
+const server = createServer(app);
+
+setupSocketIo(server);
+
+server.listen(5000, () => {
     console.log("Listening on port 5000");
     setTimeout(() => {
         // clearRedis();

@@ -1,19 +1,23 @@
 import { Server } from "socket.io";
 import CONNECTION from "./connections";
 
-const io = new Server(5001, {
-    cors: {
-        origin: "*",
-    },
-});
+export function setupSocketIo(server) {
+    const io = new Server(server, {
+        cors: {
+            origin: "*",
+        },
+    });
 
-io.on("connection", (socket) => {
-    // console.log("a user connected", socket.handshake.auth);
-    if (socket.handshake.auth.id) {
-        const id = socket.handshake.auth.id;
-        CONNECTION.addConnection(socket, id);
-    }
-});
+    io.on("connection", (socket) => {
+        console.log("a user connected", socket.handshake.auth);
+        if (socket.handshake.auth.id) {
+            const id = socket.handshake.auth.id;
+            CONNECTION.addConnection(socket, id);
+        }
+    });
+
+    return io;
+}
 
 export function emitNotification(id, notification) {
     const connection = CONNECTION.getConnection(id);
@@ -38,5 +42,3 @@ export function askDesktopToShowNotificationScreen(id) {
         console.log("[ERROR] askDesktopToShowNotificationScreen", error);
     }
 }
-
-export default io;
