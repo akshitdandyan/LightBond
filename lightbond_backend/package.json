@@ -4,6 +4,9 @@
     "main": "index.js",
     "license": "MIT",
     "type": "module",
+    "engines": {
+        "node": "16.x"
+    },
     "scripts": {
         "start": "node --es-module-specifier-resolution=node index.js",
         "dev": "nodemon --es-module-specifier-resolution=node index.js"

@@ -1,0 +1,16 @@
+FROM node:16-alpine AS deps
+
+WORKDIR /app
+COPY package.json yarn.lock ./
+RUN yarn install --frozen-lockfile
+
+ARG REDIS_PORT
+ENV REDIS_PORT=$REDIS_PORT
+ARG REDIS_HOST
+ENV REDIS_HOST=$REDIS_HOST
+ARG REDIS_PASSWORD
+ENV REDIS_PASSWORD=$REDIS_PASSWORD
+
+COPY . .
+
+CMD ["yarn", "start"]
