@@ -1,7 +1,7 @@
 import { getUserIdALS } from "./asyncLocalStorage";
 
-// const API_URL = "http://192.168.1.4:5000/api";
-const API_URL = "https://lightbond-api.onrender.com/api";
+const API_URL = "http://192.168.1.4:5000/api";
+// const API_URL = "https://lightbond.fly.dev/api";
 
 export async function connectToDesktop(id) {
     try {
