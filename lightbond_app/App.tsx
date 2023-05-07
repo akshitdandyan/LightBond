@@ -92,7 +92,7 @@ function App(): JSX.Element {
                             textAlign: "center",
                         }}
                     >
-                        LightBond.app
+                        LightBond.Click
                     </Text>
                     <Text
                         style={{

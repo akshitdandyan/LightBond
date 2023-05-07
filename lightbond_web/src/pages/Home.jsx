@@ -77,7 +77,7 @@ const Home = () => {
                             <div className="text-lg">
                                 Type{" "}
                                 <span className="text-blue-800 bg-white rounded-full px-3 py-2 text-sm hover:shadow-lg shadow-black cursor-pointer">
-                                    lightbond.link/apk
+                                    lightbond.click/apk
                                 </span>{" "}
                                 in your mobile browser
                             </div>

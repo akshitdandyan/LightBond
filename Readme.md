@@ -13,7 +13,7 @@ adb pair IpAddress:port
 6. Run in terminal:
 
 ```
-adb pair IpAddress:port
+adb connect IpAddress:port
 ```
 
 Reference: https://developer.android.com/tools/adb#wireless-adb-android-11
