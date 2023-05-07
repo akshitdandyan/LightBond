@@ -56,6 +56,19 @@ const Home = () => {
 
     return (
         <div className="">
+            <div className=" w-full bg-amber-500 text-center text-white p-2">
+                Our app will be live on play store soon. For now, you can try
+                out project by cloning it from{" "}
+                <a
+                    href="https://github.com/akshitdandyan/LightBond"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-500 hover:underline"
+                >
+                    here
+                </a>{" "}
+                and running it on your local machine.
+            </div>
             <Header />
             <div className="grid grid-cols-2">
                 <div className="flex flex-col z-10 p-4">
